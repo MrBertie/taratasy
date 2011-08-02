@@ -1,0 +1,242 @@
+/* All the additional CSS rules needed for this template
+   Make all your changes here, and not in the original Starter template files
+*/
+
+
+/* _edit.css --- HIGHLIGHTING */
+
+.dokuwiki .secedit input.button {
+    margin: 4px 0 2px 0;
+}
+
+/* _footnotes.css --- FOOTNOTES */
+
+/* link to footnote inside the text */
+.dokuwiki sup a.fn_top {
+    font-size: 0.7em;
+    margin: 0 0.18em;
+}
+/* JS footnote popup */
+div.insitu-footnote {
+    padding: 0.3em 0.6em 0.4em;
+    font-size: 90%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 7px #888;
+}
+
+.dokuwiki div.footnotes {
+    font-size: 75%;
+}
+
+/* _toc.css --- TOC */
+
+.dokuwiki div.tocheader {
+    color: __text_neu__;
+    border-radius: 5px;
+}
+
+.dokuwiki #toc__inside {
+    padding: .2em .5em .5em;
+    font-size: 85%;
+    border-radius: 5px;
+}
+
+/* basic.css */
+body {
+    font-family: "Segoe UI";
+}
+
+h1, h2, h3, h4, h5, h6,
+caption, legend {
+    font-family: Calibri;
+}
+
+textarea.edit {
+    font-family: Consolas;
+}
+
+input[type=submit], input[type=text], input.button, button,
+#dokuwiki__header form.search #qsearch__in,
+.dokuwiki form.search div.ajax_qsearch {
+    border: 1px solid __border__;
+    border-radius: 3px;
+}
+
+input[type=text] {
+    padding: 2px 5px;
+}
+
+/* content.css --- TABLES */
+.dokuwiki table.inline th,
+.dokuwiki table.inline td {
+    border: 1px solid __border__;
+}
+
+.dokuwiki ul {
+    list-style-image: url("images/bullet.gif");
+}
+
+/* design.css */
+
+/* HEADER */
+
+#dokuwiki__header {
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: auto;
+}
+
+#dokuwiki__header .pad {
+    padding: 0;
+}
+
+#dokuwiki__header .row {
+    height: 36px;
+    line-height: 36px;
+    padding-bottom: 6px;
+}
+
+#dokuwiki__header h1 a {
+    clear: left;
+    font-size:130%;
+    font-family: Calibri;
+}
+
+#dokuwiki__header .tools {
+    margin-bottom: 0;
+    overflow: hidden;
+}
+
+#dokuwiki__header .headings {
+    margin: 0 1.2em;
+}
+
+#dokuwiki__header .headings,
+#dokuwiki__header form.search {
+    float: left;
+    display: block;
+    vertical-align: middle;
+}
+
+#dokuwiki__header form.search {
+    margin: 7px 0 auto 0;
+    clear: none;
+}
+
+#dokuwiki__header form.search #qsearch__in {
+    width: 12em;
+    font-size: 95%;
+}
+
+.dokuwiki form.search div.ajax_qsearch {
+    left: 14em;
+    top: 26px;
+    width: auto;
+    box-shadow: 5px 5px 7px #888;
+}
+
+#dokuwiki__header div.breadcrumbs {
+    padding: .2em 0 .2em 2em;
+    font-size: 75%;
+}
+
+#dokuwiki__header div.breadcrumbs .bchead {
+    font-family: Calibri;
+    font-weight: bold;
+    font-size: 112%;
+    font-style: italic;
+}
+
+#dokuwiki__header div.breadcrumbs a {
+    font-style: italic;
+}
+
+#dokuwiki__footer .doc {
+    float: right;
+    font-size: 75%;
+    font-style: italic;
+    padding-right: 1em;
+}
+
+/* TOOLS */
+
+/* USERTOOLS, PAGETOOLS, SITETOOLS */
+
+#dokuwiki__usertools,
+#dokuwiki__sitetools {
+    width: auto;
+    position: static;
+    float: right;
+    vertical-align: middle;
+    background: inherit;
+    border: none;
+}
+
+#dokuwiki__usertools {
+    clear: none;
+}
+
+#dokuwiki__pagetools,
+#dokuwiki__usertools,
+#dokuwiki__sitetools {
+    font-size:82%;
+}
+
+#dokuwiki__pagetools ul {
+    max-width: 100%;
+    margin: 0 1em;
+}
+
+#dokuwiki__usertools li,
+#dokuwiki__pagetools li,
+#dokuwiki__sitetools li {
+    padding: 0 8px;
+    margin: 0 !important;
+}
+
+#dokuwiki__usertools ul,
+#dokuwiki__pagetools ul,
+#dokuwiki__sitetools ul {
+    padding: 0.1em 0.6em;
+}
+
+#dokuwiki__usertools li {
+    padding: 0.1em 0.6em;
+}
+
+#dokuwiki__usertools li.user {
+    font-style: italic;
+}
+
+#dokuwiki__pagetools li {
+    border-radius: 5px 5px 0 0;
+    margin: 0 .5em !important;
+    padding: 0.2em .8em 0.2em;
+    float: left;
+}
+
+#dokuwiki__pagetools li:nth-last-child(1) {
+    float: right;
+}
+
+/* SIDEBAR */
+#dokuwiki__aside .pad {
+    border-right: 2px dotted #CFDBEC;
+    padding-left: 4px;
+}
+
+#dokuwiki__aside ul {
+    list-style: none;
+}
+
+/* structure.css */
+#dokuwiki__site {
+    max-width: 100%;
+    padding: 0 0 2.4em;
+}
+#dokuwiki__site .wrapper {
+    margin: 0.7em auto;
+    max-width: 64em;
+    padding:0 1em;
+}
