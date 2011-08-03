@@ -16,6 +16,7 @@
     font-size: 0.7em;
     margin: 0 0.18em;
 }
+
 /* JS footnote popup */
 div.insitu-footnote {
     padding: 0.3em 0.6em 0.4em;
@@ -99,7 +100,7 @@ input[type=text] {
 
 #dokuwiki__header h1 a {
     clear: left;
-    font-size:130%;
+    font-size:120%;
     font-family: Calibri;
 }
 
@@ -183,9 +184,16 @@ input[type=text] {
     font-size:82%;
 }
 
+#dokuwiki__usertools ul,
+#dokuwiki__pagetools ul,
+#dokuwiki__sitetools ul {
+    padding: 0.1em 0.6em;
+}
+
 #dokuwiki__pagetools ul {
     max-width: 100%;
-    margin: 0 1em;
+    padding: 0.1em 0;
+    margin: 0 0;
 }
 
 #dokuwiki__usertools li,
@@ -193,12 +201,6 @@ input[type=text] {
 #dokuwiki__sitetools li {
     padding: 0 8px;
     margin: 0 !important;
-}
-
-#dokuwiki__usertools ul,
-#dokuwiki__pagetools ul,
-#dokuwiki__sitetools ul {
-    padding: 0.1em 0.6em;
 }
 
 #dokuwiki__usertools li {
@@ -210,14 +212,18 @@ input[type=text] {
 }
 
 #dokuwiki__pagetools li {
-    border-radius: 5px 5px 0 0;
-    margin: 0 .5em !important;
-    padding: 0.2em .8em 0.2em;
+    margin: 0 0 !important;
+    padding: 0.2em 1.2em 0.2em;
     float: left;
+}
+
+#dokuwiki__pagetools li:nth-last-child(2) {
+    border-radius: 0 5px 0 0;
 }
 
 #dokuwiki__pagetools li:nth-last-child(1) {
     float: right;
+    border-radius: 5px 0 0 0;
 }
 
 /* SIDEBAR */
