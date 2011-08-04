@@ -14,8 +14,7 @@ div.insitu-footnote {
     color: __text_neu__;
 }
 
-.dokuwiki #toc__inside {
-    color: #14273E;
+.dokuwiki #toc__inside a.toc {
     /*color: #805C78 !important;*/
 }
 
@@ -65,7 +64,6 @@ input[type=text] {
     color: #005B9A;
 }
 
-
 #dokuwiki__header div.breadcrumbs {
     background: -moz-linear-gradient(top, #FEFEFE 0%, #E8E8E8 100%);
 }
@@ -94,19 +92,18 @@ input[type=text] {
 
 /* USERTOOLS, PAGETOOLS, SITETOOLS */
 
-#dokuwiki__pagetools, #dokuwiki__pagetools ul{
-    /*background: -moz-linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);*/
+#dokuwiki__pagetools, #dokuwiki__pagetools ul {
     background: none;
     border: none;
 }
 
 #dokuwiki__pagetools li {
     background: -moz-linear-gradient(top, #E7EDF5 0%, #CFDBEC 100%);
+    border-color: __border__;
 }
 
 #dokuwiki__pagetools li:hover {
     background: -moz-linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);
-    border: 1px 1px 0 1px solid __border__;
 }
 
 #dokuwiki__pagetools a {

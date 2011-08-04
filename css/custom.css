@@ -213,8 +213,12 @@ input[type=text] {
 
 #dokuwiki__pagetools li {
     margin: 0 0 !important;
-    padding: 0.2em 1.2em 0.2em;
+    padding: .1em 1em;
     float: left;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
 }
 
 #dokuwiki__pagetools li:nth-last-child(2) {
@@ -224,6 +228,8 @@ input[type=text] {
 #dokuwiki__pagetools li:nth-last-child(1) {
     float: right;
     border-radius: 5px 0 0 0;
+    border-right: none;
+    border-left: 1px;
 }
 
 /* SIDEBAR */
