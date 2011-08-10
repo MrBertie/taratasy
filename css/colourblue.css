@@ -14,8 +14,14 @@ div.insitu-footnote {
 .dokuwiki div.tocheader {
 	color: __text_neu__;
 }
+<<<<<<< HEAD
 .dokuwiki #toc__inside a.toc {
 	/*color: #805C78 !important;*/
+=======
+
+.dokuwiki #toc__inside a.toc {
+    /*color: #805C78 !important;*/
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 }
 /* basic.css */
 a:link, a:visited {
@@ -54,6 +60,10 @@ input[type=text] {
 #dokuwiki__header h1 a:hover {
 	color: #005B9A;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 #dokuwiki__header div.breadcrumbs {
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #FEFEFE), color-stop(100%, #E8E8E8));
 	background: -webkit-linear-gradient(top, #FEFEFE 0%, #E8E8E8 100%);
@@ -76,11 +86,19 @@ input[type=text] {
 	color: #14273E;
 }
 /* USERTOOLS, PAGETOOLS, SITETOOLS */
+<<<<<<< HEAD
 #dokuwiki__pagetools, #dokuwiki__pagetools ul {
 	background: none;
 	border: none;
+=======
+
+#dokuwiki__pagetools, #dokuwiki__pagetools ul {
+    background: none;
+    border: none;
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 }
 #dokuwiki__pagetools li {
+<<<<<<< HEAD
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #E7EDF5), color-stop(100%, #CFDBEC));
 	background: -webkit-linear-gradient(top, #E7EDF5 0%, #CFDBEC 100%);
 	background: -moz-linear-gradient(top, #E7EDF5 0%, #CFDBEC 100%);
@@ -88,14 +106,22 @@ input[type=text] {
 	background: -ms-linear-gradient(top, #E7EDF5 0%, #CFDBEC 100%);
 	background: linear-gradient(top, #E7EDF5 0%, #CFDBEC 100%);
 	border-color: __border__;
+=======
+    background: -moz-linear-gradient(top, #E7EDF5 0%, #CFDBEC 100%);
+    border-color: __border__;
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 }
 #dokuwiki__pagetools li:hover {
+<<<<<<< HEAD
 	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #C5D0DF), color-stop(100%, #AAB4C2));
 	background: -webkit-linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);
 	background: -moz-linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);
 	background: -o-linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);
 	background: -ms-linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);
 	background: linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);
+=======
+    background: -moz-linear-gradient(top, #C5D0DF 0%, #AAB4C2 100%);
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 }
 #dokuwiki__pagetools a {
 	text-decoration: none;

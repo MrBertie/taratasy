@@ -11,6 +11,7 @@ Make all your changes here, and not in the original Starter template files
 	font-size: 0.7em;
 	margin: 0 0.18em;
 }
+
 /* JS footnote popup */
 div.insitu-footnote {
 	padding: 0.3em 0.6em 0.4em;
@@ -94,9 +95,15 @@ input[type=text] {
 	padding-bottom: 6px;
 }
 #dokuwiki__header h1 a {
+<<<<<<< HEAD
 	clear: left;
 	font-size: 120%;
 	font-family: Calibri;
+=======
+    clear: left;
+    font-size:120%;
+    font-family: Calibri;
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 }
 #dokuwiki__header .tools {
 	margin-bottom: 0;
@@ -164,6 +171,7 @@ input[type=text] {
 #dokuwiki__usertools ul, #dokuwiki__pagetools ul, #dokuwiki__sitetools ul {
 	padding: 0.1em 0.6em;
 }
+<<<<<<< HEAD
 #dokuwiki__pagetools ul {
 	max-width: 100%;
 	padding: 0.1em 0;
@@ -173,6 +181,28 @@ input[type=text] {
 	padding: 0 8px;
 	margin: 0 !important;
 }
+=======
+
+#dokuwiki__usertools ul,
+#dokuwiki__pagetools ul,
+#dokuwiki__sitetools ul {
+    padding: 0.1em 0.6em;
+}
+
+#dokuwiki__pagetools ul {
+    max-width: 100%;
+    padding: 0.1em 0;
+    margin: 0 0;
+}
+
+#dokuwiki__usertools li,
+#dokuwiki__pagetools li,
+#dokuwiki__sitetools li {
+    padding: 0 8px;
+    margin: 0 !important;
+}
+
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 #dokuwiki__usertools li {
 	padding: 0.1em 0.6em;
 }
@@ -180,6 +210,7 @@ input[type=text] {
 	font-style: italic;
 }
 #dokuwiki__pagetools li {
+<<<<<<< HEAD
 	margin: 0 0 !important;
 	padding: .1em 1em;
 	float: left;
@@ -195,8 +226,22 @@ input[type=text] {
 	-ms-border-radius: 0 5px 0 0;
 	-khtml-border-radius: 0 5px 0 0;
 	border-radius: 0 5px 0 0;
+=======
+    margin: 0 0 !important;
+    padding: .1em 1em;
+    float: left;
+    border-width: 1px;
+    border-style: solid;
+    border-bottom: none;
+    border-left: none;
+}
+
+#dokuwiki__pagetools li:nth-last-child(2) {
+    border-radius: 0 5px 0 0;
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 }
 #dokuwiki__pagetools li:nth-last-child(1) {
+<<<<<<< HEAD
 	float: right;
 	-webkit-border-radius: 5px 0 0 0;
 	-moz-border-radius: 5px 0 0 0;
@@ -206,6 +251,12 @@ input[type=text] {
 	border-radius: 5px 0 0 0;
 	border-right: none;
 	border-left: 1px;
+=======
+    float: right;
+    border-radius: 5px 0 0 0;
+    border-right: none;
+    border-left: 1px;
+>>>>>>> 961ec2050b174d9762c9a09454a32eadfe7d39b4
 }
 /* SIDEBAR */
 #dokuwiki__aside .pad {
