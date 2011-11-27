@@ -50,8 +50,7 @@ input[type=text] {
 }
 #dokuwiki__header h1 a {
 	color: #0183B7;
-    text-shadow: 1px 1px 1px #805C78;
-    filter: dropshadow(color=#805C78, offx=1, offy=1);
+    text-shadow:0 1px 2px rgba(0,0,0,0.5);
 }
 #dokuwiki__header h1 a:hover {
 	color: #005B9A;
@@ -75,9 +74,11 @@ input[type=text] {
 	color: #353D48;
 }
 /* TOOLS */
-#dokuwiki__usertools a.wikilink1, #dokuwiki__pagetools a.wikilink1, #dokuwiki__sitetools a.wikilink1, #dokuwiki__usertools a.wikilink2, #dokuwiki__pagetools a.wikilink2, #dokuwiki__sitetools a.wikilink2 {
+#dokuwiki__usertools a.wikilink1, #dokuwiki__pagetools a.wikilink1, #dokuwiki__sitetools a.wikilink1,
+#dokuwiki__usertools a.wikilink2, #dokuwiki__pagetools a.wikilink2, #dokuwiki__sitetools a.wikilink2 {
 	color: #14273E;
 }
+
 /* USERTOOLS, PAGETOOLS, SITETOOLS */
 #dokuwiki__pagetools, #dokuwiki__pagetools ul {
 	background: none;

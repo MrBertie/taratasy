@@ -10,13 +10,12 @@ body {
     color: #000;
     background-color: #fff;
     */
-    font-family: Cambria;
 }
 
 /* hide certain sections */
 .a11y,
 div.notify, div.info, div.success, div.error,
-#dokuwiki__header, #dokuwiki__aside,
+#dokuwiki__header .tools, #dokuwiki__aside,
 .dokuwiki .breadcrumbs, .dokuwiki .toc, .dokuwiki .secedit,
 #dokuwiki__pagetools, #dokuwiki__footer {
     display: none;
@@ -35,12 +34,11 @@ div.notify, div.info, div.success, div.error,
 
 /* undo icons */
 .dokuwiki a:link, .dokuwiki a:visited {
-    text-decoration: none;
+    text-decoration: underline;
     color: #333;
     background-color: inherit;
     background-image: none;
     padding: 0;
-    border-bottom: 1px dotted #CCCCCC;
 }
 
 /* display href after link */
@@ -122,9 +120,4 @@ div.clearer {
     clear: both;
     border-top: 1pt solid #000;
     margin-top: 10pt;
-    font-size: 75%;
-}
-.dokuwiki sup a.fn_top {
-    font-size: 75%;
-    text-decoration: none;
 }
