@@ -50,7 +50,7 @@ input[type=text] {
 }
 #dokuwiki__header h1 a {
 	color: #0183B7;
-    text-shadow:0 1px 2px rgba(0,0,0,0.5);
+    text-shadow:0 1px 2px rgba(17,38,67,0.5);
 }
 #dokuwiki__header h1 a:hover {
 	color: #005B9A;
@@ -107,6 +107,11 @@ input[type=text] {
 #dokuwiki__pagetools a, #dokuwiki__usertools a, #dokuwiki__sitetools a {
 	color: #353D48;
 }
+#dokuwiki__usertools a:hover, #dokuwiki__sitetools a:hover {
+    text-decoration:none;
+    color: #5F4A1E;
+    text-shadow:0 1px 1px rgba(17,38,67,0.5);
+}
 #dokuwiki__usertools li.user {
-	color: #805C78;
+	color: #A69DA4;
 }

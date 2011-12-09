@@ -199,11 +199,10 @@ input[type=text] {
 }
 
 #dokuwiki__usertools li {
-	padding: 0.1em 0.6em;
 }
 #dokuwiki__usertools li.user {
-	font-style: italic;
 }
+
 #dokuwiki__pagetools li {
 	margin: 0 0 !important;
 	padding: .1em 1em;
