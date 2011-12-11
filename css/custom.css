@@ -110,7 +110,7 @@ input[type=text] {
 }
 #dokuwiki__header .headings {
 	margin: 0 1.5em;
-    padding-top: 1px;
+    padding-top: 2px;
 }
 #dokuwiki__header .headings, #dokuwiki__header form.search {
 	float: left;
