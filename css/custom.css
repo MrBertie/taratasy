@@ -68,6 +68,9 @@ input[type=submit], input[type=text], input.button, button, #dokuwiki__header fo
 	-khtml-border-radius: 3px;
 	border-radius: 3px;
 }
+input[type=submit] {
+    padding-bottom: 1px;
+}
 input[type=text] {
 	padding: 2px 5px;
 }
@@ -90,9 +93,8 @@ input[type=text] {
 	padding: 0;
 }
 #dokuwiki__header .row {
-	height: 36px;
-	line-height: 36px;
-	padding-bottom: 6px;
+	height: 40px;
+    padding-bottom: 1px;
 }
 #dokuwiki__header h1 a {
 	clear: left;
@@ -107,7 +109,8 @@ input[type=text] {
 	overflow: hidden;
 }
 #dokuwiki__header .headings {
-	margin: 0 1.2em;
+	margin: 0 1.5em;
+    padding-top: 1px;
 }
 #dokuwiki__header .headings, #dokuwiki__header form.search {
 	float: left;
@@ -115,7 +118,7 @@ input[type=text] {
 	vertical-align: middle;
 }
 #dokuwiki__header form.search {
-	margin: 7px 0 auto 0;
+	margin: 8px 0 auto 0;
 	clear: none;
 }
 #dokuwiki__header form.search #qsearch__in {
@@ -155,54 +158,50 @@ input[type=text] {
 	width: auto;
 	position: static;
 	float: right;
-	vertical-align: middle;
 	background: inherit;
 	border: none;
 }
 #dokuwiki__usertools {
 	clear: none;
 }
-#dokuwiki__pagetools, #dokuwiki__usertools, #dokuwiki__sitetools {
+#dokuwiki__pagetools,
+#dokuwiki__usertools,
+#dokuwiki__sitetools {
 	font-size: 82%;
-}
-#dokuwiki__usertools ul, #dokuwiki__pagetools ul, #dokuwiki__sitetools ul {
-	padding: 0.1em 0.6em;
-}
-
-#dokuwiki__pagetools ul {
-	max-width: 100%;
-	padding: 0.1em 0;
-	margin: 0 0;
-}
-#dokuwiki__usertools li, #dokuwiki__pagetools li, #dokuwiki__sitetools li {
-	padding: 0 8px;
-	margin: 0 !important;
 }
 
 #dokuwiki__usertools ul,
-#dokuwiki__pagetools ul,
 #dokuwiki__sitetools ul {
-    padding: 0.1em 0.6em;
+    position: relative;
 }
+
+#dokuwiki__usertools li,
+#dokuwiki__sitetools li {
+    float: left;
+    display: table-cell;
+    list-style-type: none;
+    height: 34px;
+    margin: 3px 0;
+}
+
+#dokuwiki__usertools li a,
+#dokuwiki__sitetools li a,
+#dokuwiki__usertools li.user {
+    display: block;
+    height: 34px;
+    line-height: 34px;
+    vertical-align: middle;
+    text-align: center;
+    padding:0 1em;
+}
+
+/* page tools fixed at bottom of browser window */
 
 #dokuwiki__pagetools ul {
     max-width: 100%;
     padding: 0.1em 0;
     margin: 0 0;
 }
-
-#dokuwiki__usertools li,
-#dokuwiki__pagetools li,
-#dokuwiki__sitetools li {
-    padding: 0 8px;
-    margin: 0 !important;
-}
-
-#dokuwiki__usertools li {
-}
-#dokuwiki__usertools li.user {
-}
-
 #dokuwiki__pagetools li {
 	margin: 0 0 !important;
 	padding: .1em 1em;
