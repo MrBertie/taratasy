@@ -1,9 +1,13 @@
 <?php
 /**
- * DokuWiki Starter Template
+ * DokuWiki Taratasy Template
  *
- * @link   http://dokuwiki.org/template:starter
+ * @link   http://dokuwiki.org/template:taratasy
+ * @author Symon Bent <hendrybadao@gmail.com>
+ *
+ * Based on Starter Template by
  * @author Anika Henke <anika@selfthinker.org>
+ *
  */
 
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
@@ -23,6 +27,8 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php _tpl_include('meta.html') ?>
+    <!-- load any dynamic styles needed for this namespace only, used to set site/sidebar widths via config setting -->
+    <?php _tpl_ns_styles(); ?>
 </head>
 
 <body>
@@ -112,7 +118,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
             <!-- ********** ASIDE ********** -->
             <div id="dokuwiki__aside"><div class="pad include">
-                <?php tpl_include_page(tpl_getConf('sidebarID')) /* includes the given wiki page */ ?>
+                <?php tpl_include_page(_tpl_sidebar()) /* includes the given wiki page */ ?>
                 <div class="clearer"></div>
             </div></div><!-- /aside -->
 
