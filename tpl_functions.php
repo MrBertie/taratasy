@@ -190,7 +190,7 @@ function _tpl_include($fn) {
 
 
 /**
- * Use the sidebar page from current namespace if available, if not use the global
+ * Use the sidebar page from current namespace if available, if not use the global one
  *
  * @author Symon Bent hendrybadao@gmail.com
  */
@@ -214,9 +214,10 @@ function _tpl_sidebar() {
 
 /**
  * Custom styles to allow different site/sidebar widths per namespace
- * Set in template configuration (nsWidth)
+ * Set in template's configuration (nsWidth)
  * Syntax: "<namespace> <site-width> <sidebar-width>;<namespace-2> <site-width-2> <sidebar-width-2>"
- * (semicolons between namespaces sections, spaces within a section)
+ *          (semicolons between namespaces sections, spaces within a section)
+ * @author Symon Bent hendrybadao@gmail.com
  */
 function _tpl_ns_styles() {
     global $INFO;
