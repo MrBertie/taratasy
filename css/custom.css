@@ -260,6 +260,6 @@ input[type=text] {
 }
 #dokuwiki__site .wrapper {
 	margin: 0.7em auto;
-	max-width: __site-width__;
+	max-width: __site_width__;
 	padding: 0 1em;
 }
