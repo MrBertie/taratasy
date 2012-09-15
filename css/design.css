@@ -238,7 +238,13 @@
 
 #dokuwiki__footer {
     margin-bottom: 1em;
+    color: #c0c0c0;
 }
+
+#dokuwiki__footer a {
+    color: gray;
+}
+
 #IE6 #dokuwiki__footer,
 #IE7 #dokuwiki__footer {
     height: 1%;
@@ -251,6 +257,7 @@
 }
 #dokuwiki__footer .license {
     clear: both;
+    text-align: center;
 }
 #dokuwiki__footer .license img {
     margin: 0 .5em 0 0;
