@@ -16,26 +16,26 @@ if (!defined('DOKU_INC')) die();
  *
  * @author Anika Henke <anika@selfthinker.org>
  */
-function _tpl_discussion($discussionPage,$title,$backTitle,$link=0,$wrapper=0) {
+function _tpl_discussion($discussionPage, $title, $backTitle, $link=0, $wrapper=0) {
     global $ID;
 
-    $discussPage    = str_replace('@ID@',$ID,$discussionPage);
-    $discussPageRaw = str_replace('@ID@','',$discussionPage);
-    $isDiscussPage  = strpos($ID,$discussPageRaw)!==false;
-    $backID         = str_replace($discussPageRaw,'',$ID);
+    $discussPage    = str_replace('@ID@', $ID, $discussionPage);
+    $discussPageRaw = str_replace('@ID@', '', $discussionPage);
+    $isDiscussPage  = strpos($ID, $discussPageRaw) !== false;
+    $backID         = str_replace($discussPageRaw, '', $ID);
 
     if ($wrapper) echo "<$wrapper>";
 
     if ($isDiscussPage) {
         if ($link)
-            tpl_pagelink($backID,$backTitle);
+            tpl_pagelink($backID, $backTitle);
         else
-            echo html_btn('back2article',$backID,'',array(),'get',0,$backTitle);
+            echo html_btn('back2article', $backID, '', array(), 'get', 0, $backTitle);
     } else {
         if ($link)
-            tpl_pagelink($discussPage,$title);
+            tpl_pagelink($discussPage, $title);
         else
-            echo html_btn('discussion',$discussPage,'',array(),'get',0,$title);
+            echo html_btn('discussion', $discussPage, '', array(), 'get', 0, $title);
     }
 
     if ($wrapper) echo "</$wrapper>";
@@ -46,29 +46,29 @@ function _tpl_discussion($discussionPage,$title,$backTitle,$link=0,$wrapper=0) {
  *
  * @author Anika Henke <anika@selfthinker.org>
  */
-function _tpl_userpage($userPage,$title,$link=0,$wrapper=0) {
+function _tpl_userpage($userPage, $title, $link=0, $wrapper=0) {
     if (!$_SERVER['REMOTE_USER']) return;
 
     global $conf;
-    $userPage = str_replace('@USER@',$_SERVER['REMOTE_USER'],$userPage);
+    $userPage = str_replace('@USER@', $_SERVER['REMOTE_USER'], $userPage);
 
     if ($wrapper) echo "<$wrapper>";
 
     if ($link)
-        tpl_pagelink($userPage,$title);
+        tpl_pagelink($userPage, $title);
     else
-        echo html_btn('userpage',$userPage,'',array(),'get',0,$title);
+        echo html_btn('userpage', $userPage, '', array(), 'get', 0, $title);
 
     if ($wrapper) echo "</$wrapper>";
 }
 
 /**
  * Create link/button to register page
- * DW versions > 2011-02-20 can use the core function tpl_action('register')
+ * @deprecated DW versions > 2011-02-20 can use the core function tpl_action('register')
  *
  * @author Anika Henke <anika@selfthinker.org>
  */
-function _tpl_register($link=0,$wrapper=0) {
+function _tpl_register($link=0, $wrapper=0) {
     global $conf;
     global $lang;
     global $ID;
@@ -79,9 +79,9 @@ function _tpl_register($link=0,$wrapper=0) {
     if ($wrapper) echo "<$wrapper>";
 
     if ($link)
-        tpl_link(wl($ID,'do=register'),$lang_register,'class="action register" rel="nofollow"');
+        tpl_link(wl($ID, 'do=register'), $lang_register, 'class="action register" rel="nofollow"');
     else
-        echo html_btn('register',$ID,'',array('do'=>'register'),'get',0,$lang_register);
+        echo html_btn('register', $ID, '', array('do'=>'register'), 'get', 0, $lang_register);
 
     if ($wrapper) echo "</$wrapper>";
 }
@@ -91,153 +91,151 @@ function _tpl_register($link=0,$wrapper=0) {
  *
  * @author Anika Henke <anika@selfthinker.org>
  */
-function _tpl_action($type,$link=0,$wrapper=0) {
+function _tpl_action($type, $link=0, $wrapper=0) {
     switch ($type) {
         case 'discussion':
             if (tpl_getConf('discussionPage')) {
-                _tpl_discussion(tpl_getConf('discussionPage'),tpl_getLang('discussion'),tpl_getLang('back_to_article'),$link,$wrapper);
+                _tpl_discussion(tpl_getConf('discussionPage'), tpl_getLang('discussion'), tpl_getLang('back_to_article'), $link, $wrapper);
             }
             break;
         case 'userpage':
             if (tpl_getConf('userPage')) {
-                _tpl_userpage(tpl_getConf('userPage'),tpl_getLang('userpage'),$link,$wrapper);
+                _tpl_userpage(tpl_getConf('userPage'), tpl_getLang('userpage'), $link, $wrapper);
             }
             break;
-        case 'register':
-            _tpl_register($link,$wrapper);
+        case 'register': // deprecated
+            _tpl_register($link, $wrapper);
             break;
     }
 }
 
-/**
- * Returns icon from data/media root directory if it exists, otherwise
- * the one in the template's image directory.
- *
- * @param  bool $abs        - if to use absolute URL
- * @param  string $fileName - file name of icon
- * @author Anika Henke <anika@selfthinker.org>
- */
-function _tpl_getFavicon($abs=false, $fileName='favicon.ico') {
-    if (file_exists(mediaFN($fileName))) {
-        return ml($fileName, '', true, '', $abs);
-    }
 
-    if($abs) {
-        return DOKU_URL.substr(DOKU_TPL.'images/'.$fileName, strlen(DOKU_REL));
-    }
-    return DOKU_TPL.'images/'.$fileName;
+
+/* fallbacks for things missing in older DokuWiki versions
+********************************************************************/
+
+
+/* if newer settings exist in the core, use them, otherwise fall back to template settings */
+
+if (!isset($conf['tagline'])) {
+    $conf['tagline'] = tpl_getConf('tagline');
 }
 
-/* use core function if available, otherwise the custom one */
-if (!function_exists('tpl_getFavicon')) {
-    function tpl_getFavicon($abs=false, $fileName='favicon.ico'){
-        _tpl_getFavicon($abs, $fileName);
-    }
+if (!isset($conf['sidebar'])) {
+    $conf['sidebar'] = tpl_getConf('sidebarID');
+}
+
+/* these $lang strings are now in the core */
+
+if (!isset($lang['user_tools'])) {
+    $lang['user_tools'] = tpl_getLang('user_tools');
+}
+if (!isset($lang['site_tools'])) {
+    $lang['site_tools'] = tpl_getLang('site_tools');
+}
+if (!isset($lang['page_tools'])) {
+    $lang['page_tools'] = tpl_getLang('page_tools');
+}
+if (!isset($lang['skip_to_content'])) {
+    $lang['skip_to_content'] = tpl_getLang('skip_to_content');
 }
 
 
 /**
- * Returns <link> tag for various icon types (favicon|mobile|generic)
- *
- * @param  array $types - list of icon types to display (favicon|mobile|generic)
- * @author Anika Henke <anika@selfthinker.org>
+ * copied from core (available since Adora Belle)
  */
-function _tpl_favicon($types=array('favicon')) {
+if (!function_exists('tpl_getMediaFile')) {
+    function tpl_getMediaFile($search, $abs = false, &$imginfo = null) {
+        $img     = '';
+        $file    = '';
+        $ismedia = false;
+        // loop through candidates until a match was found:
+        foreach($search as $img) {
+            if(substr($img, 0, 1) == ':') {
+                $file    = mediaFN($img);
+                $ismedia = true;
+            } else {
+                $file    = tpl_incdir().$img;
+                $ismedia = false;
+            }
 
-    $return = '';
-
-    foreach ($types as $type) {
-        switch($type) {
-            case 'favicon':
-                $return .= '<link rel="shortcut icon" href="'.tpl_getFavicon().'" />'.NL;
-                break;
-            case 'mobile':
-                $return .= '<link rel="apple-touch-icon" href="'.tpl_getFavicon(false, 'apple-touch-icon.png').'" />'.NL;
-                break;
-            case 'generic':
-                // ideal world solution, which doesn't work in any browser yet
-                $return .= '<link rel="icon" href="'.tpl_getFavicon(false, 'icon.svg').'" type="image/svg+xml" />'.NL;
-                break;
+            if(file_exists($file)) break;
         }
-    }
 
-    return $return;
+        // fetch image data if requested
+        if(!is_null($imginfo)) {
+            $imginfo = getimagesize($file);
+        }
+
+        // build URL
+        if($ismedia) {
+            $url = ml($img, '', true, '', $abs);
+        } else {
+            $url = tpl_basedir().$img;
+            if($abs) $url = DOKU_URL.substr($url, strlen(DOKU_REL));
+        }
+
+        return $url;
+    }
 }
 
-/* use core function if available, otherwise the custom one */
+/**
+ * copied from core (available since Angua)
+ */
 if (!function_exists('tpl_favicon')) {
-    function tpl_favicon($types=array('favicon')){
-        _tpl_favicon($types);
+    function tpl_favicon($types = array('favicon')) {
+
+        $return = '';
+
+        foreach($types as $type) {
+            switch($type) {
+                case 'favicon':
+                    $look = array(':wiki:favicon.ico', ':favicon.ico', 'images/favicon.ico');
+                    $return .= '<link rel="shortcut icon" href="'.tpl_getMediaFile($look).'" />'.NL;
+                    break;
+                case 'mobile':
+                    $look = array(':wiki:apple-touch-icon.png', ':apple-touch-icon.png', 'images/apple-touch-icon.png');
+                    $return .= '<link rel="apple-touch-icon" href="'.tpl_getMediaFile($look).'" />'.NL;
+                    break;
+                case 'generic':
+                    // ideal world solution, which doesn't work in any browser yet
+                    $look = array(':wiki:favicon.svg', ':favicon.svg', 'images/favicon.svg');
+                    $return .= '<link rel="icon" href="'.tpl_getMediaFile($look).'" type="image/svg+xml" />'.NL;
+                    break;
+            }
+        }
+
+        return $return;
     }
 }
 
-
 /**
- * Include additional html file from conf directory if it exists, otherwise use
- * file in the template's root directory.
- *
- * @author Anika Henke <anika@selfthinker.org>
+ * copied from core (available since Adora Belle)
  */
-function _tpl_include($fn) {
-    $confFile = DOKU_CONF.$fn;
-    $tplFile  = dirname(__FILE__).'/'.$fn;
-
-    if (file_exists($confFile))
-        include($confFile);
-    else if (file_exists($tplFile))
-        include($tplFile);
-}
-
-
-/**
- * Use the sidebar page from current namespace if available, if not use the global one
- *
- * @author Symon Bent hendrybadao@gmail.com
- */
-
-function _tpl_sidebar() {
-    global $INFO;
-
-    $id = tpl_getConf('sidebarID');
-    $ns = $INFO['namespace'];
-
-    do {
-        $sidebar = $ns . ':' . $id;
-        if (page_exists($sidebar)) {
-            return $sidebar;
+if (!function_exists('tpl_includeFile')) {
+    function tpl_includeFile($file) {
+        global $config_cascade;
+        foreach(array('protected', 'local', 'default') as $config_group) {
+            if(empty($config_cascade['main'][$config_group])) continue;
+            foreach($config_cascade['main'][$config_group] as $conf_file) {
+                $dir = dirname($conf_file);
+                if(file_exists("$dir/$file")) {
+                    include("$dir/$file");
+                    return;
+                }
+            }
         }
-        $ns = substr($ns, 0, strrpos($ns, ':'));
-    } while ( ! empty($ns));
-    return $id;
-}
 
-
-/**
- * Custom styles to allow different site/sidebar widths per namespace
- * Set in template's configuration (nsWidth)
- * Syntax: "<namespace> <site-width> <sidebar-width>;<namespace-2> <site-width-2> <sidebar-width-2>"
- *          (semicolons between namespaces sections, spaces within a section)
- * @author Symon Bent hendrybadao@gmail.com
- */
-function _tpl_ns_styles() {
-    global $INFO;
-    $result = '';
-
-    $cur_ns = $INFO['namespace'];
-    $args = explode(';', tpl_getConf('nsWidth'));
-    foreach ($args as $arg) {
-        list ($ns, $site_width, $sidebar_width) = explode(' ', $arg);
-        $ns = ltrim(trim($ns), ':');
-        $match = strpos($cur_ns, $ns);
-        if ($match == 0 && $match !== false) {
-            $result = '<style>' .
-                        '.mode_show #dokuwiki__aside { width: ' . $sidebar_width . '; }' . DOKU_LF .
-                        '.mode_show #dokuwiki__content { margin-left: -' . $sidebar_width . '; }' . DOKU_LF .
-                        '.mode_show #dokuwiki__content .pad { margin-left: ' . $sidebar_width . '; }' . DOKU_LF .
-                        '#dokuwiki__site .wrapper { max-width: ' . $site_width . '; }' . DOKU_LF .
-                      '</style>';
-            echo $result;
-            break;
+        // still here? try the template dir
+        $file = tpl_incdir().$file;
+        if(file_exists($file)) {
+            include($file);
         }
     }
 }
+
+/**
+ * @author Symon Bent
+ * Additional customised template functions to be included
+ */
+include_once('tpl_functions.local.php');

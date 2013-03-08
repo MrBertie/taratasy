@@ -67,6 +67,7 @@ input[type=submit], input[type=text], input.button, button, #dokuwiki__header fo
 	-ms-border-radius: 3px;
 	-khtml-border-radius: 3px;
 	border-radius: 3px;
+    line-height: normal;
 }
 input[type=submit] {
     padding-bottom: 1px;
@@ -180,19 +181,19 @@ input[type=text] {
     float: left;
     display: table-cell;
     list-style-type: none;
-    height: 34px;
-    margin: 3px 0;
+    /*height: 34px;*/
+    margin: 0 0;
 }
 
 #dokuwiki__usertools li a,
 #dokuwiki__sitetools li a,
 #dokuwiki__usertools li.user {
     display: block;
-    height: 34px;
-    line-height: 34px;
+    height: 40px;
+    line-height: 40px;
     vertical-align: middle;
     text-align: center;
-    padding:0 1em;
+    padding:0 0.5em;
 }
 
 /* page tools fixed at bottom of browser window */
