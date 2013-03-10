@@ -7,9 +7,9 @@
  */
 
 function _tpl_sidebar() {
-    global $INFO;
+    global $INFO, $conf;
 
-    $id = tpl_getConf('sidebarID');
+    $id = $conf['sidebar'];
     $ns = $INFO['namespace'];
 
     do {
