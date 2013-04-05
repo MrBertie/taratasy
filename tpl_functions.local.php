@@ -55,3 +55,22 @@ function _tpl_ns_styles() {
         }
     }
 }
+
+/**
+ * Print info if the user is logged in
+ * and show full name in that case
+ *
+ * SB: removed the 'Logged in as:' message; too much fluff
+ *
+ * @author Andreas Gohr <andi@splitbrain.org>
+ * @author Symon Bent <hendrybadao@gmail.com>
+ * @return bool
+ */
+function _tpl_userinfo() {
+    global $INFO;
+    if(isset($_SERVER['REMOTE_USER'])) {
+        print hsc($INFO['userinfo']['name']).' ('.hsc($_SERVER['REMOTE_USER']).')';
+        return true;
+    }
+    return false;
+}

@@ -29,7 +29,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
     <?php tpl_includeFile('meta.html') ?>
-    
+
     <!-- load any dynamic styles needed for this namespace only, used to set site/sidebar widths via config setting -->
     <?php _tpl_ns_styles(); ?>
 </head>
@@ -88,7 +88,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                                          e.g. a button inside a <li> would be: tpl_action('edit',0,'li') */
                                     if ($_SERVER['REMOTE_USER']) {
                                         echo '<li class="user">';
-                                        tpl_userinfo(); /* 'Logged in as ...' */
+                                        _tpl_userinfo(); /* 'Logged in as ...' */
                                         echo '</li>';
                                     }
 
