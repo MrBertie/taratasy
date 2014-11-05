@@ -1,0 +1,339 @@
+/* All the additional CSS rules needed for this template
+Make all your changes here, and not in the original Starter template files
+ */
+
+/* MIXINS and PARAMS */
+
+@left-fillet: 5px 0 0 0;
+@right-fillet: 0 5px 0 0;
+@toc_fontsize: 85%;
+@aside-border: #CFDBEC;
+@title-font: Calibri;
+
+
+.box-shadow() {
+    box-shadow: 5px 5px 7px #888;
+    -moz-box-shadow: 5px 5px 7px #888;
+    -webkit-box-shadow: 5px 5px 7px #888;
+}
+
+.border-radius(@rad) {
+    border-radius: @rad;
+    -webkit-border-radius: @rad;
+    -moz-border-radius: @rad;
+    -o-border-radius: @rad;
+    -ms-border-radius: @rad;
+    -khtml-border-radius: @rad;
+}
+
+
+// ********************************
+
+
+/* JS footnote popup */
+div.insitu-footnote {
+    .border-radius(5px);
+    .box-shadow();
+    font-size: 90%;
+    padding: 0.3em 0.6em 0.4em;
+}
+
+
+.dokuwiki {
+    /* _edit.css --- HIGHLIGHTING */
+    .secedit input.button {
+        margin: 4px 0 2px 0;
+    }
+    /* _footnotes.css --- FOOTNOTES */
+    /* link to footnote inside the text */
+    sup a.fn_top {
+        font-size: 0.7em;
+        margin: 0 0.18em;
+    }
+
+    div.footnotes {
+        font-size: 75%;
+    }
+
+    /* _toc.css --- TOC */
+    div.tocheader {
+        color: @ini_text_neu;
+        .border-radius(5px);
+    }
+
+    #toc__inside {
+        font-size: @toc-fontsize;
+        padding: .2em .5em .5em;
+        .border-radius(5px);
+    }
+}
+
+/* basic.css */
+body {
+    font-family: "Segoe UI";
+}
+
+h1, h2, h3, h4, h5, h6, caption, legend {
+    font-family: @title-font;
+}
+
+textarea.edit {
+    font-family: Consolas;
+}
+
+input[type=submit], input[type=text], input.button, button, #dokuwiki__header form.search #qsearch__in, .dokuwiki form.search div.ajax_qsearch {
+    border: 1px solid @ini_border;
+    line-height: normal;
+    .border-radius(3px);
+}
+
+input[type=submit] {
+    padding-bottom: 1px;
+}
+
+input[type=text] {
+    padding: 2px 5px;
+}
+
+
+/* content.css --- TABLES */
+.dokuwiki table.inline th, .dokuwiki table.inline td {
+    border: 1px solid @ini_border;
+}
+
+.dokuwiki ul {
+    list-style-image: url("images/bullet.gif");
+}
+
+
+/* design.css */
+
+/* HEADER */
+#dokuwiki__header {
+    margin: 0;
+    right: 0;
+    width: auto;
+    top: 0;
+
+    .pad {
+        padding: 0;
+    }
+    .row {
+        height: 40px;
+        width: 100%;
+    }
+    h1 a {
+        clear: left;
+        font-family: @title-font;
+        font-size: 28px;
+        line-height:40px;
+        vertical-align: middle;
+    }
+    .headings {
+        margin: 0 1.5em;
+    }
+    .headings,
+    form.search {
+        display: block;
+        float: left;
+    }
+    form.search {
+        clear: none;
+        height: 28px;
+        margin-top: 0 !important;
+        padding: 8px 0 4px;
+
+        #qsearch__in {
+            width: 12em;
+            font-size: 95%;
+            //height: 23px;
+        }
+        div.ajax_qsearch {
+            left: 14em;
+            top: 26px;
+            width: auto;
+            .box-shadow();
+        }
+    }
+    div.breadcrumbs {
+        font-size: 70%;
+        padding: .2em 0 .2em 2em;
+        //white-space: nowrap;
+
+        .bchead {
+            font-family: @title-font;
+            font-size: 112%;
+            font-style: italic;
+            font-weight: bold;
+        }
+        a {
+            font-style: italic;
+            &:hover {
+                color: black;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
+#dokuwiki__footer .doc {
+    float: right;
+    font-size: 75%;
+    font-style: italic;
+    padding-right: 1em;
+}
+
+
+/* TOOLS */
+/* USERTOOLS, PAGETOOLS, SITETOOLS */
+
+
+/* page tools fixed at bottom of browser window */
+
+#dokuwiki__pagetools {
+    ul {
+        font-size: 90%;
+        margin: 0 0;
+        max-width: 100%;
+        padding: 0.1em 0;
+    }
+    li {
+        border-style: solid;
+        border-width: 1px;
+        border-bottom: none;
+        border-left: none;
+        float: left;
+        margin: 0 0 !important;
+        padding: .1em 1em;
+
+        &:nth-last-child(1) {
+            border-left: 1px;
+            border-right: none;
+            float: right;
+            .border-radius(@left-fillet);
+        }
+        &:nth-last-child(2) {
+            margin: 0 0 !important;
+            padding: .1em 1em;
+            float: left;
+            border-width: 1px;
+            border-style: solid;
+            border-bottom: none;
+            border-left: none;
+            .border-radius(@right-fillet);
+        }
+    }
+}
+
+
+
+/* SIDEBAR */
+#dokuwiki__aside {
+    .pad {
+        border-right: 1px solid @aside-border;
+        padding-left: 4px;
+    }
+    ul {
+        list-style: none;
+        li {
+            margin-left: 0;
+        }
+    }
+}
+
+
+/* structure.css */
+
+#dokuwiki__site {
+    max-width: 100%;
+    padding: 0 0 2.4em;
+    z-index: 0;
+
+    .wrapper {
+        margin: 0.7em auto;
+        max-width: @ini_site_width;
+        padding: 0 1em;
+    }
+}
+
+#dokuwiki__usertools,
+#dokuwiki__sitetools {
+    width: auto;
+    a:hover {
+        cursor: default;
+    }
+}
+#dokuwiki__usertools ul {
+    margin: 0;
+    max-width: none;
+    padding: 0;
+}
+
+.tools {
+
+    background: inherit !important;
+    border: none;
+    display: block;
+    float: right;
+    height: 40px;
+    margin: 0 !important;
+    overflow: visible;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        float: left;
+        list-style: none;
+
+        li {
+            display: list-item !important;
+            float: right;
+            margin: 0;
+            padding: 0;
+            position: relative !important;
+
+            &:hover ul {
+                display: block;
+                @include transition(background, 0.2s);
+            }
+
+            a, .user {
+                display: block;
+                padding:0 0.5em;
+                height: 40px;
+                line-height: 40px;
+                text-align: left;
+                vertical-align: middle;
+            }
+            a img {
+                height: 20px;
+                width: 20px;
+                opacity: 0.5;
+            }
+
+            .user {
+                font-size: 80%;
+            }
+
+            ul {
+                display: none;
+                min-width: 150px;
+                position: absolute;
+                right: 0;
+                top: 41px;
+                transition: visibility 0.65s ease-in;
+                width: inherit !important;
+                z-index:9999;
+
+                li {
+                    float: left;
+                    position: relative;
+                    width: 100%;
+                    a:hover {
+                        cursor: pointer !important;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -13,7 +13,8 @@
  */
 
 if (!defined('DOKU_INC')) die(); /* must be run from within DokuWiki */
-@require_once(dirname(__FILE__).'/tpl_functions.php'); /* include hook for template functions */
+$path = dirname(__FILE__);
+@require_once($path . '/tpl_functions.php'); /* include hook for template functions */
 
 $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER['REMOTE_USER'] );
 ?><!DOCTYPE html>
@@ -64,44 +65,46 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
 
                 <?php tpl_searchform() ?>
 
-                <div class="tools">
 
-                    <!-- SITE TOOLS -->
-                    <div id="dokuwiki__sitetools">
-                        <h3 class="a11y"><?php echo $lang['site_tools'] ?></h3>
-                        <ul>
-                            <?php
-                                tpl_action('recent', 1, 'li');
-                                tpl_action('media', 1, 'li');
-                                tpl_action('index', 1, 'li');
-                                tpl_action('login', 1, 'li');
-                            ?>
-                        </ul>
-                    </div>
-
-                    <!-- USER TOOLS -->
-                    <?php if ($conf['useacl'] && $showTools): ?>
-                        <div id="dokuwiki__usertools">
-                            <h3 class="a11y"><?php echo $lang['user_tools'] ?></h3>
+                <nav class="tools">
+                    <ul>
+                        <!-- SITE TOOLS -->
+                        <li id="dokuwiki__sitetools">
+                            <!--
+                            <a href="#"><?php echo $lang['site_tools']; ?></a>
+                            -->
+                            <a href="#"><img src="lib/tpl/taratasy/images/menu.png"></a>
                             <ul>
-                                <?php /* the optional second parameter of tpl_action() switches between a link and a button,
-                                         e.g. a button inside a <li> would be: tpl_action('edit',0,'li') */
-                                    if ($_SERVER['REMOTE_USER']) {
-                                        echo '<li class="user">';
-                                        _tpl_userinfo(); /* 'Logged in as ...' */
-                                        echo '</li>';
-                                    }
-
-                                    tpl_action('profile', 1, 'li');
-                                    _tpl_action('userpage', 1, 'li');
-                                    _tpl_action('register', 1, 'li');
-                                    tpl_action('admin', 1, 'li');
-                                ?>
+                                <?php tpl_action('recent', 1, 'li'); ?>
+                                <?php tpl_action('media', 1, 'li');  ?>
+                                <?php tpl_action('index', 1, 'li');  ?>
+                                <?php tpl_action('login', 1, 'li');  ?>
                             </ul>
-                        </div>
-                    <?php endif ?>
+                        </li>
 
-                </div>
+                        <!-- USER TOOLS -->
+                        <?php if ($conf['useacl'] && $showTools): ?>
+                            <li id="dokuwiki__usertools">
+                                <!--
+                                <a href="#"><?php echo $lang['user_tools']; ?></a>
+                                -->
+                                <a href="#"><img src="lib/tpl/taratasy/images/user.png"></a>
+                                <ul>
+                                    <?php tpl_action('profile', 1, 'li');   ?>
+                                    <?php _tpl_action('userpage', 1, 'li'); ?>
+                                    <?php _tpl_action('register', 1, 'li'); ?>
+                                    <?php tpl_action('admin', 1, 'li');     ?>
+                                </ul>
+                            </li>
+                        <?php endif; ?>
+
+                        <?php if ($_SERVER['REMOTE_USER']): ?>
+                            <li>
+                                <span class="user"><?php _tpl_userinfo(); ?></span>
+                            </li>
+                        <?php endif; ?>
+                    </ul>
+                </nav>
             </div>
             <div class="clearer"></div>
 
