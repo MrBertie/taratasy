@@ -146,7 +146,6 @@ input[type=text] {
         #qsearch__in {
             width: 12em;
             font-size: 95%;
-            //height: 23px;
         }
         div.ajax_qsearch {
             left: 14em;
@@ -258,15 +257,16 @@ input[type=text] {
 
 #dokuwiki__usertools,
 #dokuwiki__sitetools {
+    border: 0;
     width: auto;
     a:hover {
         cursor: default;
     }
-}
-#dokuwiki__usertools ul {
-    margin: 0;
-    max-width: none;
-    padding: 0;
+    ul {
+        margin: 0;
+        max-width: none;
+        padding: 1px 0 0 0;
+    }
 }
 
 .tools {
@@ -280,7 +280,6 @@ input[type=text] {
     overflow: visible;
 
     ul {
-        padding: 0;
         margin: 0;
         float: left;
         list-style: none;
@@ -320,7 +319,7 @@ input[type=text] {
                 min-width: 150px;
                 position: absolute;
                 right: 0;
-                top: 41px;
+                top: 40px;
                 transition: visibility 0.65s ease-in;
                 width: inherit !important;
                 z-index:9999;
