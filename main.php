@@ -73,7 +73,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                             <!--
                             <a href="#"><?php echo $lang['site_tools']; ?></a>
                             -->
-                            <a href="#"><img src="/lib/tpl/taratasy/images/menu.png"></a>
+                            <a href="#"><img src="<?php echo tpl_basedir();?>/images/menu.png"></a>
                             <ul>
                                 <?php tpl_action('recent', 1, 'li'); ?>
                                 <?php tpl_action('media', 1, 'li');  ?>
@@ -88,7 +88,7 @@ $showTools = !tpl_getConf('hideTools') || ( tpl_getConf('hideTools') && $_SERVER
                                 <!--
                                 <a href="#"><?php echo $lang['user_tools']; ?></a>
                                 -->
-                                <a href="#"><img src="/lib/tpl/taratasy/images/user.png"></a>
+                                <a href="#"><img src="<?php echo tpl_basedir();?>/images/user.png"></a>
                                 <ul>
                                     <?php tpl_action('profile', 1, 'li');   ?>
                                     <?php _tpl_action('userpage', 1, 'li'); ?>
